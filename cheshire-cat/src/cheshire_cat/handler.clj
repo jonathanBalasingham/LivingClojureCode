@@ -3,17 +3,12 @@
             [compojure.route :as route]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
             [ring.middleware.json :as ring-json]
-            [ring.util.response :as rr]
-            [cheshire-core :as json]))
+            [ring.util.response :as rr]))
 
 (defroutes app-routes
   (GET "/" [] "Hello World")
-  (GET "/cheshire-cat" [] 
-    {:status 200
-     :headers {"Content-Type" "application/json; charset=utf-8"}
-     :body (json/generate-string
-      {:name "Cheshire Cat"
-       :status :grinning})})
+  (GET "/cheshire-cat" []
+    (rr/response {:name "Cheshire Cat" :status :grinning}))
   (route/not-found "Not Found"))
 
 (def app

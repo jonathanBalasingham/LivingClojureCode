@@ -5,6 +5,7 @@
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [compojure "1.6.1"]
                  [ring/ring-defaults "0.3.2"]
+                 [ring/ring-json "0.3.1"]
                  [cheshire "5.4.0"]]
   :plugins [[lein-ring "0.12.5"]]
   :ring {:handler cheshire-cat.handler/app}
