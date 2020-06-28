@@ -6,8 +6,10 @@
                  [compojure "1.6.1"]
                  [ring/ring-defaults "0.3.2"]
                  [ring/ring-json "0.3.1"]
-                 [cheshire "5.4.0"]]
-  :plugins [[lein-ring "0.12.5"]]
+                 [cheshire "5.4.0"]
+                 [org.clojure/clojurescript "1.10.764"]]
+  :plugins [[lein-ring "0.12.5"]
+            [lein-cljsbuild "1.0.6"]]
   :ring {:handler cheshire-cat.handler/app}
   :profiles
   {:dev {:dependencies [[javax.servlet/servlet-api "2.5"]
